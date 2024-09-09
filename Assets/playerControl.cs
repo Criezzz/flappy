@@ -6,7 +6,7 @@ using UnityEngine;
 public class playerControl : MonoBehaviour
 {
     private Vector3 direction;
-    public float gravity = -9.8f;
+    public float gravity = -12f;
     public float strength = 4f;
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class playerControl : MonoBehaviour
 
         }
         direction.y += gravity * Time.deltaTime;
+        Debug.Log(Time.deltaTime);
         float zRotation = transform.eulerAngles.z;
         float normalizedZ = Mathf.DeltaAngle(0, zRotation); // This gives you the angle in a range from -180 to 180
 
