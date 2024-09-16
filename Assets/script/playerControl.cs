@@ -10,20 +10,20 @@ public class playerControl : MonoBehaviour
     public float strength;
     private void Start()
     {
+        
         gravity = -18f;
-        strength = 4.5f;
+        strength = 5f;
+        tap();
     }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            transform.rotation = Quaternion.Euler(0, 0, 45);
-            direction = Vector3.up * strength;
+            tap();
 
         }
         direction.y += gravity * Time.deltaTime;
-        Debug.Log(Time.deltaTime);
         float zRotation = transform.eulerAngles.z;
         float normalizedZ = Mathf.DeltaAngle(0, zRotation); // This gives you the angle in a range from -180 to 180
 
@@ -41,5 +41,10 @@ public class playerControl : MonoBehaviour
             gameManager.instance.gameOver = true;
 
         }
+    }
+    private void tap()
+    {
+        transform.rotation = Quaternion.Euler(0, 0, 45);
+        direction = Vector3.up * strength;
     }
 }

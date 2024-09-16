@@ -5,7 +5,6 @@ using UnityEngine;
 public class pipeScroll : MonoBehaviour
 {
     public float scrollingSpeed = 5.3f; // to match ground speed
-
     // Update is called once per frame
     void Update()
     {
