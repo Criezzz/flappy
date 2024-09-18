@@ -35,6 +35,7 @@ public class gameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
+                
                 play();
                 
             }

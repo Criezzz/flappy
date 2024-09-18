@@ -38,12 +38,14 @@ public class playerControl : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("MainCamera"))
         {
+            AudioManager.instance.playSound("hit");
             gameManager.instance.gameOver = true;
 
         }
     }
     private void tap()
     {
+        if (gameManager.instance.gameOver) { return; }
         transform.rotation = Quaternion.Euler(0, 0, 45);
         direction = Vector3.up * strength;
     }

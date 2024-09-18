@@ -16,6 +16,7 @@ public class pipeScroll : MonoBehaviour
         if (transform.position.x <= gameManager.instance.player.transform.position.x-2 && crossed == false)
         {
             gameManager.instance.score += 1 ;
+            AudioManager.instance.playSound("point");
             if(gameManager.instance.score > PlayerPrefs.GetInt("best"))
             {
                 PlayerPrefs.SetInt("best", gameManager.instance.score);
